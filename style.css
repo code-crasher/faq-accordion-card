@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Kumbh Sans', sans-serif;
+}
+body{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.2;
+    color:hsl(237,12%,33%);
+    width:100vw;
+    height:100vh;
+    display:grid;
+    place-items: center;
+    background-image: linear-gradient(to right, hsl(240,73%,65%),hsl(273,75%,66%));
+}
+img{
+    display: block;
+    width:100%;
+}
+.accoridon__card{
+    width:80%;
+    height:auto;
+    background:#fff;
+    margin-top:3rem;
+    border-radius:10px;
+
+}
+.accoridon__container{
+    display:grid;
+    grid-template-rows:1fr,auto;
+    grid-template-columns: 1fr;
+    gap:4rem;
+}
+.accoridon__content-img{
+    position: relative;
+}
+.illustration{
+    position:absolute;
+    top: -4.3rem;
+    left:50%;
+    transform:translateX(-50%);
+}
+.pattern{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform:translateX(-50%);
+}
+.accoridon__text{
+    padding:0.75rem 1rem;
+}
+.accoridon__text h1{
+    color: hsl(238, 29%, 16%);
+    text-transform: uppercase;
+    text-align: center;
+}
+.accoridon__text .text__content .question{
+    position: relative;
+    margin-block: 0.5rem;
+    cursor:pointer;
+}
+.accoridon__text .text__content .question:hover{
+    color:hsl(14,88%,65%);
+}
+.accoridon__text .text__content .question::after{
+    position: absolute;
+    content: url(icon-arrow-down.svg);
+    right:0;
+
+}
+.accoridon__text .text__content .answer{
+    border-bottom:1px solid hsl(240,5%,91%);
+    height: 0;
+    overflow: hidden;
+    transition: 0.5s;
+}
+.accoridon__text .text__content.active .answer{
+    height: 30px;
+    transition:0.5s;
+}
+.accoridon__text .text__content.active .question{
+    color:hsl(238, 29%, 16%);
+    font-weight:700 ;
+}
+@media(min-width:600px){
+    .accoridon__card{
+        width: 600px;
+        padding:1rem;
+    }
+    .accoridon__container{
+        display: grid;
+        grid-template-columns:1fr 1fr;
+        gap:0.5rem;
+    }
+    .illustration{
+        width:90%;
+        left:-4rem;
+        top:50%;
+        transform: translateY(-50%);
+    }
+    .pattern{
+        width:100%;
+        left:3rem;
+        bottom:2rem;
+    }
+    .box{
+        position:absolute;
+        left:-10rem;
+        top:70%;
+        transform:translateY(-60%);
+    }
+}
